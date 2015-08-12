@@ -3,7 +3,7 @@ import sys
 
 
 class ExpenditureFeedGeneration(object):
-    """ The ExpenditureFeedGeneration class provides methods that allow the generation of expenditure feeds as a service. """
+    """ Generate expenditure feeds as a service. """
     def __init__(self):
         """ Instantiate the class logger. """
         handler = logging.StreamHandler(stream=sys.stdout)
@@ -14,7 +14,12 @@ class ExpenditureFeedGeneration(object):
     def start(self):
         """ Start the expenditure feed generation service.
 
-        Currently, "starting" the expenditure feed generation service simply logs a message to stdout indicating (falsely) that the service has started. In the future, I'd like to adjust this so that the service sets up the appropriate exchanges, queues and binds, waits for a message to say the feed should be generated, generates the feed and then sends a message to say the feed has been generated.
+        Currently, "starting" the expenditure feed generation service simply
+        logs a message to stdout indicating (falsely) that the service has
+        started. In the future, I'd like to adjust this so that the service
+        sets up the appropriate exchanges, queues and binds, waits for a
+        message to say the feed should be generated, generates the feed and
+        then sends a message to say the feed has been generated.
 
         Usage::
 
